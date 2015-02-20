@@ -1,11 +1,90 @@
+<!DOCTYPE html>
 <html>
 
-<head>
-  <title>OCC Programming Club</title>
-</head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+		<link rel="foundation" type="text/css" href="foundation.css"/>
+		<link rel="shortcut icon" href="your_image_path_and_name.ico" />
+		<meta charset="utf-8">
+		<title>OCC Programming Club</title>
+	</head>
+	<body>
+		<div id="headblock">
+		<header>OCC <span id="banner">Programming Club</span></header>
+		</div>
+		<div id="newmember">
+				<p>		
+						<input class="bannermeetinginfo" type="button" onclick="alert('under construction')"type=submit value="Meeting Info"</button>
+						<input class="bannercontactinfo" type="button" onclick="alert('under construction')"type=submit value="Contact Info"</button>
+				</p>
+		</div>
+					<div id="newmemberbanner">
+						<span id="clubmember"><u><em>New Club Member?</em></u></span>
+						<input class="headbutton" type="button" onclick="alert('under construction')"type=submit value="Join now!"</button>
+					</div>
+		<section>
+		<p>
+			<table id="toptable" style="width:50%" align="center" >
+				<tr>
+					<th id="ttheader">Club Meetings</th>
+					<th id="ttheader">Next Meeting</th>
+				</tr>
+				<tr>
+					<th>Day: Friday</th>
+					<th>Day/Month/Year</th>
+				</tr>
+				<tr>
+					<th>Time: 10:30 am - 12:30pm</th>
+				</tr>
+				<tr>
+					<th>Place: Technology 209</th>
+				</tr>
+			</table>
+		</p>
+		</section>
+		
+		<section>
+			<p id="vision">Club's Vision</p>
+			
+			<p id="visionstatement">To build teams of programmers capable of working</p>
+			<p id="visionstatement">together to tackle the most interesting computer</p> 
+			<p id="visionstatement">problems in a fun an creative environment.</p>
 
-<body>
-  <h1>OCC Programming Club</h1>
-</body>
-
+			<div id="githubhyperlink"style="text-align:center">
+			
+				<a href="https://github.com/occprogramming" style="text-decoration:none">
+					<img src="github-logo.jpg">
+				</a>
+			
+			</div>
+			
+		</section>
+					<div class="leftcolumn"></div>	<!--left grey column-->
+					<div class="rightcolumn"></div>	<!--right grey column-->
+		<script type="text/javascript">
+			function toggleMe(a){
+			var e=document.getElementById(a);
+			if(!e)return true;
+			if(e.style.display=="none"){
+					e.style.display="block"
+				}
+			else{
+					e.style.display="none"
+				}
+					return true;
+				}
+		</script>
+		
+		<div id="hide">
+		<input id="bottombutton" type="button" onclick="return toggleMe('hidebutton')" value="Click to view more" align="center"><br>
+		<span id="hidebutton" style='display:none'><p >
+			your mother was a hamster and your father smelled of elderberries
+		</p></span>
+		</div>
+  </div>    
+			
+	</body>
+	<footer>
+	</footer>
+	
 </html>
