@@ -1,17 +1,18 @@
 *{
-	font-family: Palatino Linotype, SanSerif;
+	font-family: 'Exo', Palatino Linotype, SanSerif;
 }
 header{
 	text-align: center;
 	font-size: 80px;
-	font-family: Palatino Linotype, SanSerif;
+	font-family: 'Exo', SanSerif;
 	letter-spacing: 0.1em;
-	font-weight: bold;
 	letter-spacing: -1px;
 	background-color: #333333;
     background-image: linear-gradient(to bottom, #333333, #000000);
 	color: #CC6600;
+	font-weight: meddium;
 }
+
 #meetinginfo{
 	margin-right: 550px;
 	color: white;
@@ -98,10 +99,12 @@ header{
 }
 #banner{
 	color: #3366ff;
+	font-family: 'Exo', san-serif;
 }
 #visionstatement{
 	text-align: center;
 	position:center;
+	line-height: 0.8em;
 }
 body{
 	background-color: #ECECEC;
