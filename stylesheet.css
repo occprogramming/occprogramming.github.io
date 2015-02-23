@@ -217,20 +217,22 @@ a{
 
 .leftcolumn{
 	height: 850px;
-	width: 160px;
+	width: 10%;
+	float: left;
 	background-color: #7A7A7A;
 	position: absolute;
-	margin-left: -10px;
-	margin-top: -700px;
+	margin-left: -2%;
+	margin-top: -50%;
 
 }
 .rightcolumn{
 	height: 850px;
-	width: 160px;
+	width: 10%;
+	float: right;
 	background-color: #7A7A7A;
 	position: absolute;
-	margin-left: 1181px;
-	margin-top: -700px;
+	margin-left: 90%;
+	margin-top: -50%;
 
 }
 
