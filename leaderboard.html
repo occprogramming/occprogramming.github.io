@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,12 +23,86 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script>alert("Coming Soon!")</script>
+  <style type="text/css">
+    .dreamloLBTable { border-collapse:collapse;text-align:center;width: 200px; }
+    .dreamloLBTable th { border-bottom: 1px solid #EEEEEE;font-weight:bold;margin:0;padding:4px; }
+    .dreamloLBTable td { border-bottom: 1px solid#EEEEEE;margin:0;padding:4px; }
+  </style>
+
   </head>
 
   <body>
-  	<div class="text-center">
-  		<a href="index.html">Go to Home.</a>
-  	</div>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="index.html">Home</a></li>
+            <li role="presentation"><a href="resources.html">Resources</a></li>
+            <li role="presentation" class="active"><a href="leaderboard.html">Leaderboard</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted hidden-xs">OCC Programming Club</h3>
+        <h3 class="text-muted hidden-sm hidden-md hidden-lg">OCC PC</h3>
+      </div>
+  
+      <div class="jumbotron">
+        <h1>Club's Leaderboard <sup><span style="font-size: 11px;" class="label label-warning">BETA</span></sup></h1>
+        <br>
+
+        <p class="lead">Here you will find statistics from the <b>top problem solvers</b> of the club.</p>
+        <p><small>Note: This feature is at a very early stage and may not have essential functionalities.</small></p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h4>The Leaderboard</h4>
+          In our meetings, we will occassionaly perform little coding competitions. Every time a club member (individually or in teams) completes a problem, he or she receives a score based on 4 factors: <b>delivery</b>, <b>efficiency</b>, <b>speed</b>, and <b>readability</b>.
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h3 class"text-center">The Scores</h3>
+
+          <script src="http://dreamlo.com/lb/54fd2c996e51b60dfc1b0f7c/js" type="text/javascript"></script>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-center">
+            <h6><b>Disclaimer</b>: A high score does not mean better skills or more knowledge.
+              It merely reflects the <i>activity level</i> of a club member.</h6>
+          </p>
+        </div>
+      </div>
+
+    <br>
+
+      <footer class="footer">
+        <p>&copy; OCC Programming Club 2015</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+      var els = document.getElementsByClassName('dreamloLBTable');
+      els[0].className = 'table table-condensed table-hover';
+    </script>
   </body>
-  </html>
+</html>
+
