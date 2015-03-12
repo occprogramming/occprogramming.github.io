@@ -28,17 +28,33 @@
     <div class="container">
       <div class="header">
         <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="resources.html">Resources</a></li>
-            <li role="presentation"><a href="leaderboard.html">Leaderboard</a></li>
-          </ul>
+          <div class="navbar-header navbar-default">
+            <button type="button" class="navbar-toggle collapsed dark" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          <h3 class="text-muted hidden-xs">OCC Programming Club</h3>
+          <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#">OCC Prog. Club</a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav nav-pills navbar-right hidden-xs">
+              <li role="presentation" class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+              <li role="presentation"><a href="resources.html">Resources</a></li>
+              <li role="presentation"><a href="leaderboard.html">Leaderboard</a></li>
+            </ul>
+            <ul class="nav nav-pills nav-stacked navbar-right hidden-sm hidden-md hidden-lg">
+              <li role="presentation" class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+              <li role="presentation"><a href="resources.html">Resources</a></li>
+              <li role="presentation"><a href="leaderboard.html">Leaderboard</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
         </nav>
-        <h3 class="text-muted hidden-xs">OCC Programming Club</h3>
-        <h3 class="text-muted hidden-sm hidden-md hidden-lg">OCC PC</h3>
       </div>
 
-      <div class="jumbotron">
+      <div class="jumbotron" style="margin-top:30px">
         <h1>OCC Programming Club</h1>
         <p class="lead">The Orange Coast College Programming Club is a brand new club where programming enthusiasts collaboratively sketch on white boards, type on their keyboards, and blend art and science to bring ideas to life. Excited? <i>Us too.</i></p>
   
