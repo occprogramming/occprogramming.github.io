@@ -6,12 +6,33 @@
 	@return A date object with the next dayOfWeek
 */
 
-function getNextDayOfWeek(dayOfWeek) {
+function getNextDayOfWeek(dayOfWeek) 
+{
 
 	var date = new Date();
 	var unformattedDate = new Date();
 
 	unformattedDate.setDate(date.getDate() + (7 + dayOfWeek - date.getDay()) % 7);
+	unformattedDate.setHours(10, 30); // Meeting is at 10:30 AM
+
+	if (date.getDate() == unformattedDate.getDate()) // Today is the meeting
+	{
+		if (date.getTime() >= unformattedDate.getTime() && 
+			date.getTime() <= unformattedDate.getTime() + 7200*1000) // 7200*1000 ms is equal to 2 hours (From 10:30 to 12:30)
+			// If this is true, the meeting is RIGHT NOW
+		{
+			// MEETING HAPPENING RIGHT NOW
+			return "RIGHTNOW";
+		}
+		else if (date.getTime() < unformattedDate.getTime()) // It's happening later
+		{
+			return "LATER";
+		}
+		else // It already passed
+		{
+			unformattedDate.setDate(unformattedDate.getDate() + 7); // Add a week
+		}
+	}
 
 	//// Formatting the date
 
@@ -84,4 +105,72 @@ function getMonthFromInt(monthNumber) {
 	return monthInLetters;
 }
 
-document.getElementById("nextmeeting").innerHTML = getNextDayOfWeek(5);
+// IF statement to check if later or right now, or else.
+var meeting = getNextDayOfWeek(5);
+
+if (meeting == "LATER")
+{
+	document.getElementById("outernextmeeting").innerHTML = "Our next meeting is in ";
+
+	var target_date = new Date();
+	target_date.setHours(10, 30);
+	target_date = target_date.getTime();
+
+	var hours, minutes, seconds;
+
+	var countdown = document.getElementById("nextmeeting");
+
+	setInterval(function() {
+		var current_date = new Date().getTime();
+		var seconds_left = (target_date - current_date) / 1000;
+	 
+		hours = parseInt(seconds_left / 3600);
+		seconds_left = seconds_left % 3600;
+	  
+		minutes = parseInt(seconds_left / 60);
+		seconds = parseInt(seconds_left % 60);
+
+		countdown.innerHTML = "";
+
+		if (hours > 0)
+		{
+			countdown.innerHTML += hours;
+
+			if (hours == 1) 
+			{
+				countdown.innerHTML += " hour, ";
+			}
+			else
+			{
+				countdown.innerHTML += " hours, ";
+			}
+		}
+
+		if (minutes > 0)
+		{
+			countdown.innerHTML += minutes;
+
+			if (minutes == 1) 
+			{
+				countdown.innerHTML += " minute, and ";
+			}
+			else
+			{
+				countdown.innerHTML += " minutes, and ";
+			}
+		}
+
+		countdown.innerHTML += seconds + " seconds."
+
+	}, 1000);	
+}
+else if (meeting == "RIGHTNOW")
+{
+	document.getElementById("outernextmeeting").innerHTML = "Our meeting is happening";
+	document.getElementById("nextmeeting").innerHTML = "right now!";
+}
+else
+{
+	document.getElementById("outernextmeeting").innerHTML = "Our next meeting is this Friday, ";
+	document.getElementById("nextmeeting").innerHTML = meeting;
+}
