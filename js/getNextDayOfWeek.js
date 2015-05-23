@@ -152,11 +152,11 @@ if (meeting == "LATER")
 
 			if (minutes == 1) 
 			{
-				countdown.innerHTML += " minute, and ";
+				countdown.innerHTML += " minute and ";
 			}
 			else
 			{
-				countdown.innerHTML += " minutes, and ";
+				countdown.innerHTML += " minutes and ";
 			}
 		}
 
