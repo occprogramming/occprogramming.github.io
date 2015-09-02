@@ -8,5 +8,9 @@
 }
 
 .pad-top-sm {
-  padding-top:10px;
+  padding-top: 10px;
+}
+
+.navbar-toggle {
+  margin-top: 17px;
 }
