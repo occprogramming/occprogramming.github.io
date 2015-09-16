@@ -13,13 +13,12 @@ jQuery(document).ready(function() {
    */
    $("#spring-2015-resources-link" ).click(function() {
        
-        if ($('#fall-2015-resources').is(":visible")) //Checks if div is visible, if true the div will fadeOut
-                $('#fall-2015-resources').fadeOut('slow');
+        if ($('#fall-2015-resources').is(":visible")) //Checks if div is visible, if true the div will slideup
+                $('#fall-2015-resources').slideUp('slow');
        
-       var fontWeight = $(this).css('font-weight'); //Store font-weight in a var
-            if (fontWeight == 'bold' || fontWeight == '700') { //If font-weight is bold sets set it to normal font weight
+            if ($('#spring-2015-resources').is(":visible")) //Checks to see if div is visible, it true sets the font weight back to normal
                 $('#spring-2015-resources-link').css('font-weight', 'normal');
-            }
+            
             else   //Else if the font-weight is normal sets it to bold
                 $('#spring-2015-resources-link').css('font-weight', 'bold');
        
@@ -33,13 +32,12 @@ jQuery(document).ready(function() {
    $("#fall-2015-resources-link" ).click(function() {
 
             if ($('#spring-2015-resources').is(":visible"))
-                $('#spring-2015-resources').fadeOut('slow');
+                $('#spring-2015-resources').slideUp('slow');
        
-       var fontWeight = $(this).css('font-weight'); //Store font-weight in a var
-            if (fontWeight == 'bold' || fontWeight == '700') { //If font-weight is bold sets set it to normal font weight
+            if ($('#fall-2015-resources').is(":visible"))//Checks to see if div is visible, it true sets the font weight back to normal
                 $('#fall-2015-resources-link').css('font-weight', 'normal');
-            }
-            else         //Else if the font-weight is normal sets it to bold
+            
+            else    //Else if the font-weight is normal sets it to bold
                 $('#fall-2015-resources-link').css('font-weight', 'bold');
        
        $('#spring-2015-resources-link').css('font-weight', 'normal');
