@@ -167,7 +167,7 @@ if (meeting == "LATER")
 else if (meeting == "RIGHTNOW")
 {
 	document.getElementById("outernextmeeting").innerHTML = "Our meeting is happening";
-	document.getElementById("nextmeeting").innerHTML = "right now!";
+	document.getElementById("nextmeeting").innerHTML = " right now!";
 }
 else
 {
