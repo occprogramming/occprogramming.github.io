@@ -1,54 +1,105 @@
 /*
-    Functions that toggle the resource divs for sring and fall of 2015
-
+    Set of methods that manage the effects of the resources boxes
+    in resources.html
 */
+
+// CONFIGURATION
+/* WHEN ADDING NEW RESOURCES BOXES, UPDATE THESE TWO ARRAYS
+   NOTE: THEY HAVE TO BE IN ORDER AND FOLLOW THE SAME FORMAT
+***********************************************************/
+var resourcesBoxList = [ 
+  $('#spring-2015-resources'), 
+  $('#fall-2015-resources') 
+];
+
+var resourcesLinkList = [
+  $('#spring-2015-resources-link'), 
+  $('#fall-2015-resources-link')
+];
+/**********************************************************/
 
 jQuery(document).ready(function() {
 
-   $('#spring-2015-resources').hide();
-   $('#fall-2015-resources-link').css('font-weight', 'bold');
-    
-   /*
-        Function to toggle the spring 2015 resources div
-   */
-   $("#spring-2015-resources-link" ).click(function() {
-       
-        if ($('#fall-2015-resources').is(":visible")) //Checks if div is visible, if true the div will slideup
-                $('#fall-2015-resources').slideUp('slow');
-       
-            if ($('#spring-2015-resources').is(":visible")) //Checks to see if div is visible, it true sets the font weight back to normal
-                $('#spring-2015-resources-link').css('font-weight', 'normal');
-            
-            else   //Else if the font-weight is normal sets it to bold
-                $('#spring-2015-resources-link').css('font-weight', 'bold');
-       
-        $('#fall-2015-resources-link').css('font-weight', 'normal'); 
-        $('#spring-2015-resources').slideToggle('slow');
-   });
-    
-    /*
-        Function to toggle the fall 2015 resources div
-   */
-   $("#fall-2015-resources-link" ).click(function() {
+  // SET UP
+  for(var i = 0; i < resourcesBoxList.length; i++) {
+    resourcesBoxList[i].hide();
+  }
 
-            if ($('#spring-2015-resources').is(":visible"))
-                $('#spring-2015-resources').slideUp('slow');
-       
-            if ($('#fall-2015-resources').is(":visible"))//Checks to see if div is visible, it true sets the font weight back to normal
-                $('#fall-2015-resources-link').css('font-weight', 'normal');
-            
-            else    //Else if the font-weight is normal sets it to bold
-                $('#fall-2015-resources-link').css('font-weight', 'bold');
-       
-       $('#spring-2015-resources-link').css('font-weight', 'normal');
-       $('#fall-2015-resources').slideToggle('slow');
-       
-   });
+  var currentSemesterResourcesBox = resourcesBoxList[ resourcesBoxList.length - 1 ];
+
+  toggleResourcesBox( currentSemesterResourcesBox );
+  
+  // CLICK EVENTS
+  $(resourcesLinkList).each(function() {
+    $(this).on('click', function() {
+      toggleResourcesBox( getResourcesBox( $(this) ) );
+    });
+  });
    
 });
 
+// HELPER FUNCTIONS
+function toggleResourcesBox(resourcesBox) {
+  var resourcesLink = getResourcesLink( resourcesBox );
 
+  function activateBox() {
+    resourcesBox.slideDown('slow');
+    resourcesLink.css('font-weight', 'bold');
+  }
 
+  function deactivateBox() {
+    resourcesBox.slideUp('slow');
+    resourcesLink.css('font-weight', 'normal');
+  }
 
+  // Function body:
 
+  if (resourcesBox.is(':visible')) {
+    // Current resources box is the one active.
+    deactivateBox();
+  } else {
+    var activeResourcesBox = getActiveResourcesBox();
+    
+    if (activeResourcesBox != null) {
+      // Another resource box is active.
+      //console.log(activeResourcesBox);
 
+      activeResourcesBox.slideUp('slow', function() {
+        // Slide up completed...
+        activateBox();
+      });
+
+      var activeResourcesLink = getResourcesLink( activeResourcesBox );
+      activeResourcesLink.css('font-weight', 'normal');
+    } else {
+      // No resources box is active.
+      activateBox();
+    }
+  }
+}
+
+function getActiveResourcesBox() {
+  var activeResourcesBox = null;
+
+  for (var i = 0; i < resourcesBoxList.length; i++) {
+    var resourcesBox = resourcesBoxList[ i ];
+    if (resourcesBox.is(':visible')) {
+      activeResourcesBox = resourcesBox;
+      break;
+    }
+  }
+
+  return activeResourcesBox;
+}
+
+function getResourcesLink(resourcesBox) {
+  var boxId = resourcesBox.attr('id');
+  var linkId = boxId + '-link';
+  return $('#' + linkId);
+}
+
+function getResourcesBox(resourcesLink) {
+  var linkId = resourcesLink.attr('id');
+  var boxId = linkId.substring(0, linkId.length - 5);
+  return $('#' + boxId);
+}
