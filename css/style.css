@@ -14,7 +14,12 @@
 .navbar-toggle {
   margin-top: 17px;
 }
+
 a:hover{
-    
+
     cursor: pointer;
+}
+
+.text-muted > a{
+  color:inherit;
 }
