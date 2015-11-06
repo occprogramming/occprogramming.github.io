@@ -1,5 +1,5 @@
 #logo {
-  margin-right: 5px;
+  margin-right: 10px;
   margin-bottom: 5px;
 }
 
@@ -14,7 +14,13 @@
 .navbar-toggle {
   margin-top: 17px;
 }
+
 a:hover{
-    
+
     cursor: pointer;
+}
+
+.text-muted > a{
+  color: inherit;
+  text-decoration: none;
 }
