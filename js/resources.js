@@ -10,15 +10,13 @@
 var resourcesBoxList = [ 
   $('#spring-2015-resources'), 
   $('#fall-2015-resources'),
-  $('#spring-2016-resources'),
-  $('#fall-2016-resources')
+  $('#spring-2016-resources')
 ];
 
 var resourcesLinkList = [
   $('#spring-2015-resources-link'), 
   $('#fall-2015-resources-link'),
-  $('#spring-2016-resources-link'),
-  $('#fall-2016-resources-link')
+  $('#spring-2016-resources-link')
 ];
 /**********************************************************/
 
